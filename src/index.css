@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind utilities;
+
+.hero-content {
+  padding-bottom: 32vw;
+}
+
+@screen md {
+  .hero-content {
+    padding-bottom: 16vw;
+  }
+}
+
+.forecast {
+  z-index: -1;
+  transform: translateY(-100%);
+}
+
+.menu-toggle {
+  @apply w-6 h-8 relative;
+}
+
+.menu-toggle span {
+  @apply absolute w-full bg-black left-0;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out, opacity 0s linear 0.2s;
+}
+
+.menu-toggle span:first-child {
+  @apply w-3/5;
+  top: calc(50% - 8px);
+}
+
+.menu-toggle span:last-child {
+  @apply w-3/5 left-auto right-0;
+  top: calc(50% + 8px);
+}
+
+.menu-toggle[aria-expanded='true'] span:first-child {
+  @apply opacity-0;
+  transition: opacity 0s linear;
+}
+
+.menu-toggle[aria-expanded='true'] span:last-child {
+  @apply opacity-0;
+  transition: opacity 0s linear;
+}
+
+.menu-toggle[aria-expanded='true'] span:nth-child(2) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+.menu-toggle[aria-expanded='true'] span:nth-child(3) {
+  transform: translateY(-50%) rotate(45deg);
+}

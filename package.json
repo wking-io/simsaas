@@ -1,0 +1,18 @@
+{
+  "name": "simsaas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "parcel ./src/index.html -d public --open",
+    "build": "parcel build ./src/index.html -d public"
+  },
+  "author": "Will King <contact@wking.io> (https://www.wking.io/)",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "1.3.0",
+    "autoprefixer": "9.6.5",
+    "parcel-bundler": "1.12.4",
+    "tailwindcss": "1.1.2"
+  }
+}
