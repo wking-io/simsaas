@@ -77,7 +77,10 @@
 [data-text-field] input:focus ~ label,
 [data-text-field] .has-input ~ label {
   @apply text-xs bg-white bg-no-repeat px-1;
-  background-image: linear-gradient(theme('colors.grey.100'), theme('colors.grey.100'));
+  background-image: linear-gradient(
+    theme('colors.grey.100'),
+    theme('colors.grey.100')
+  );
   background-size: 100% 50%;
   background-position: top center, bottom center;
   top: 0;
