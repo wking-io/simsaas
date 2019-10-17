@@ -4,13 +4,19 @@ function offset(el) {
   return top + scrollTop;
 }
 
+function placeForecast(forecast, foundation) {
+  if (forecast && foundation) {
+    forecast.style.top = `${offset(foundation) + 24}px`;
+  }
+}
+
 const forecast = document.getElementById('forecast');
 const forecastFoundation = document.getElementById('forecast-foundation');
 
-if (forecast && forecastFoundation) {
-  const foundation = offset(forecastFoundation);
-  forecast.style.top = `${foundation + 24}px`;
-}
+placeForecast(forecast, forecastFoundation);
+window.addEventListener('resize', () =>
+  placeForecast(forecast, forecastFoundation)
+);
 
 const attrToBool = (el, attr) => el.getAttribute(attr) === 'true';
 
@@ -35,8 +41,10 @@ if (menuToggle) {
 
 const hasInput = ({ currentTarget }) => {
   console.log(currentTarget);
-  return currentTarget.value.length > 0 ? currentTarget.classList.add('has-input') : currentTarget.classList.remove('has-input');
-}
+  return currentTarget.value.length > 0
+    ? currentTarget.classList.add('has-input')
+    : currentTarget.classList.remove('has-input');
+};
 
 const fields = document.querySelectorAll('[data-text-field] input');
 fields.forEach(field => field.addEventListener('input', hasInput));
