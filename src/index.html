@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body class="font-sans text-black bg-white sm:bg-grey-100">
-    <header class="bg-grey-100">
-      <div class="pl-6 pr-2 md:pl-12 md:pr-8 py-3 sm:py-6 flex items-center">
+    <header class="relative">
+      <div
+        class="pl-6 pr-2 md:pl-12 md:pr-8 py-3 sm:py-6 flex items-center relative z-20 bg-grey-100"
+      >
         <h1 hidden>SimSaaS</h1>
         <a class="w-12 block" aria-hidden href="/">
           <img
@@ -27,7 +29,7 @@
           <li class="hidden sm:block md:ml-6">
             <a
               href="/"
-              class="p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
+              class="tracking-widest p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
             >
               Why SimSaaS?</a
             >
@@ -35,57 +37,69 @@
           <li class="hidden sm:block md:ml-6">
             <a
               href="/"
-              class="p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
+              class="tracking-widest p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
             >
               How It's Different</a
             >
           </li>
-          <li class="md:ml-6">
+          <li class="mr-4 sm:mr-0 md:ml-6">
             <a
               href="/"
-              class="p-4 uppercase text-xs text-grey-900 hover:text-primary"
+              class="border border-grey-900 hover:border-primary sm:border-0 rounded tracking-widest py-2 px-4 sm:p-4 uppercase text-xs text-grey-900 hover:text-primary"
             >
               Sign In</a
             >
           </li>
           <li class="sm:hidden mx-4">
-            <button class="menu-toggle" aria-controls="dropdown" aria-expanded="false">
+            <button
+              class="menu-toggle"
+              data-menu-toggle
+              aria-controls="dropdown"
+              aria-expanded="false"
+            >
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </button>
+          </li>
         </ul>
       </div>
+      <ul
+        id="dropdown"
+        aria-expanded="false"
+        class="absolute w-full z-10 dropdown bg-white text-center border-b border-grey-400"
+      >
+        <li class="pt-6 pb-2">
+          <a
+            href="/"
+            class="tracking-widest p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
+          >
+            Why SimSaaS?</a
+          >
+        </li>
+        <li class="pt-2 pb-6">
+          <a
+            href="/"
+            class="tracking-widest p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
+          >
+            How It's Different</a
+          >
+        </li>
+      </ul>
     </header>
-    <ul id="dropdown" aria-expanded="false">
-        <li class="md:ml-6">
-            <a
-              href="/"
-              class="p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
-            >
-              Why SimSaaS?</a
-            >
-          </li>
-          <li class="md:ml-6">
-            <a
-              href="/"
-              class="p-4 uppercase text-xs text-grey-600 hover:text-grey-900"
-            >
-              How It's Different</a
-            >
-          </li>
-    </ul>
     <section class="">
-      <div class="hero-content w-5/6 mx-auto max-w-6xl pt-6">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-0 leading-snug mb-2">Great teams forecast early and often.</h2>
+      <div class="hero-content w-5/6 mx-auto max-w-6xl pt-12">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-0 leading-snug mb-2">
+          Great teams forecast early and often.
+        </h2>
         <h3 class="text-lg md:text=xl lg:text-2xl text-grey-600 mb-8">
           Upgrade your gut feelings to forward-looking metrics.
         </h3>
-        <div class="flex flex-col md:flex-row items-start justify-start mb-4">
+        <div class="flex flex-col md:flex-row items-start justify-start mb-6 md:mb-2">
           <a
             href="/"
-            class="px-8 py-4 uppercase border border-primary bg-primary hover:bg-primary-light hover:border-primary-light shadow hover:shadow-md text-white rounded tracking-widest text-xs sm:text-sm text-center w-full md:w-auto mb-4 md:mr-4"
+            class="px-8 py-4 uppercase border border-primary bg-primary shadow hover:shadow-md text-white rounded tracking-widest text-xs sm:text-sm text-center w-full md:w-auto mb-4 md:mr-4"
             >Request Access</a
           >
           <a
@@ -96,60 +110,396 @@
         </div>
         <div class="text-center md:text-left">
           <a href="/" class="text-grey-900 underline hover:no-underline"
-          >Chat with product specialist</a>
+            >Chat with product specialist</a
+          >
         </div>
       </div>
-      <svg id="forecast" class="forecast fixed right-0 w-11/12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 761.33 183.16">
+      <svg
+        id="forecast"
+        class="forecast fixed right-0 w-11/12"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 761.33 183.16"
+      >
         <defs>
           <style>
-            .cls-1{fill:#5d47af;}.cls-2{fill:#483789;}.cls-3{fill:#007fc0;}.cls-4{fill:#5671b0;}.cls-5{fill:#43a1aa;}.cls-6{fill:#808;}.cls-7{fill:#47116f;}.cls-8{fill:#83a6cc;}.cls-9{fill:#0067c1;}.cls-10{fill:#4c559e;}.cls-11{fill:#0092b6;}.cls-12{fill:#6a8cbf;}
+            .cls-1 {
+              fill: #5d47af;
+            }
+            .cls-2 {
+              fill: #483789;
+            }
+            .cls-3 {
+              fill: #007fc0;
+            }
+            .cls-4 {
+              fill: #5671b0;
+            }
+            .cls-5 {
+              fill: #43a1aa;
+            }
+            .cls-6 {
+              fill: #808;
+            }
+            .cls-7 {
+              fill: #47116f;
+            }
+            .cls-8 {
+              fill: #83a6cc;
+            }
+            .cls-9 {
+              fill: #0067c1;
+            }
+            .cls-10 {
+              fill: #4c559e;
+            }
+            .cls-11 {
+              fill: #0092b6;
+            }
+            .cls-12 {
+              fill: #6a8cbf;
+            }
           </style>
         </defs>
-        <polygon class="cls-1" points="761.33 183.16 687.43 183.16 650.72 145.58 657.31 92.58 761.33 183.16"/>
-        <polygon class="cls-1" points="650.72 145.58 687.43 183.16 646.05 183.16 650.72 145.58"/>
-        <polygon class="cls-2" points="657.31 92.58 650.72 145.58 626.13 120.41 657.31 92.58"/>
-        <polygon class="cls-2" points="650.72 145.58 646.05 183.16 610.23 183.16 584.8 157.3 626.13 120.41 650.72 145.58"/>
-        <polygon class="cls-3" points="626.13 120.41 584.8 157.3 547.47 119.33 556.33 48.96 626.13 120.41"/>
-        <polygon class="cls-2" points="584.8 157.3 610.23 183.16 555.82 183.16 584.8 157.3"/>
-        <polygon class="cls-3" points="547.47 119.33 584.8 157.3 555.82 183.16 539.43 183.16 547.47 119.33"/>
-        <polygon class="cls-4" points="556.33 48.96 547.47 119.33 518.34 89.7 556.33 48.96"/>
-        <polygon class="cls-4" points="518.34 89.7 547.47 119.33 539.43 183.16 506.71 183.16 465.58 146.28 518.34 89.7"/>
-        <polygon class="cls-5" points="430.15 0 518.34 89.7 465.58 146.28 437.13 120.77 401.15 152.1 430.15 0"/>
-        <polygon class="cls-6" points="506.71 183.16 431.2 183.16 465.58 146.28 506.71 183.16"/>
-        <polygon class="cls-6" points="465.58 146.28 431.2 183.16 428.72 183.16 437.13 120.77 465.58 146.28"/>
-        <polygon class="cls-7" points="437.13 120.77 428.72 183.16 395.23 183.16 401.15 152.1 437.13 120.77"/>
-        <polygon class="cls-8" points="430.15 0 401.15 152.1 365.49 183.16 337.08 183.16 293.44 147.16 430.15 0"/>
-        <polygon class="cls-7" points="401.15 152.1 395.23 183.16 365.49 183.16 401.15 152.1"/>
-        <polygon class="cls-9" points="337.08 183.16 273.98 183.16 264.86 177.93 293.44 147.16 337.08 183.16"/>
-        <polygon class="cls-9" points="293.44 147.16 264.86 177.93 255.01 172.27 267.5 125.77 293.44 147.16"/>
-        <polygon class="cls-9" points="273.98 183.16 260 183.16 264.86 177.93 273.98 183.16"/>
-        <polygon class="cls-10" points="267.5 125.77 255.01 172.27 226.62 155.98 267.5 125.77"/>
-        <polygon class="cls-9" points="255.01 172.27 264.86 177.93 260 183.16 252.08 183.16 255.01 172.27"/>
-        <polygon class="cls-10" points="255.01 172.27 252.08 183.16 189.85 183.16 226.62 155.98 255.01 172.27"/>
-        <polygon class="cls-11" points="226.62 155.98 189.85 183.16 122.95 183.16 143.12 108.06 226.62 155.98"/>
-        <polygon class="cls-12" points="143.12 108.06 122.95 183.16 0 183.16 143.12 108.06"/>
+        <polygon
+          class="cls-1"
+          points="761.33 183.16 687.43 183.16 650.72 145.58 657.31 92.58 761.33 183.16"
+        />
+        <polygon
+          class="cls-1"
+          points="650.72 145.58 687.43 183.16 646.05 183.16 650.72 145.58"
+        />
+        <polygon
+          class="cls-2"
+          points="657.31 92.58 650.72 145.58 626.13 120.41 657.31 92.58"
+        />
+        <polygon
+          class="cls-2"
+          points="650.72 145.58 646.05 183.16 610.23 183.16 584.8 157.3 626.13 120.41 650.72 145.58"
+        />
+        <polygon
+          class="cls-3"
+          points="626.13 120.41 584.8 157.3 547.47 119.33 556.33 48.96 626.13 120.41"
+        />
+        <polygon
+          class="cls-2"
+          points="584.8 157.3 610.23 183.16 555.82 183.16 584.8 157.3"
+        />
+        <polygon
+          class="cls-3"
+          points="547.47 119.33 584.8 157.3 555.82 183.16 539.43 183.16 547.47 119.33"
+        />
+        <polygon
+          class="cls-4"
+          points="556.33 48.96 547.47 119.33 518.34 89.7 556.33 48.96"
+        />
+        <polygon
+          class="cls-4"
+          points="518.34 89.7 547.47 119.33 539.43 183.16 506.71 183.16 465.58 146.28 518.34 89.7"
+        />
+        <polygon
+          class="cls-5"
+          points="430.15 0 518.34 89.7 465.58 146.28 437.13 120.77 401.15 152.1 430.15 0"
+        />
+        <polygon
+          class="cls-6"
+          points="506.71 183.16 431.2 183.16 465.58 146.28 506.71 183.16"
+        />
+        <polygon
+          class="cls-6"
+          points="465.58 146.28 431.2 183.16 428.72 183.16 437.13 120.77 465.58 146.28"
+        />
+        <polygon
+          class="cls-7"
+          points="437.13 120.77 428.72 183.16 395.23 183.16 401.15 152.1 437.13 120.77"
+        />
+        <polygon
+          class="cls-8"
+          points="430.15 0 401.15 152.1 365.49 183.16 337.08 183.16 293.44 147.16 430.15 0"
+        />
+        <polygon
+          class="cls-7"
+          points="401.15 152.1 395.23 183.16 365.49 183.16 401.15 152.1"
+        />
+        <polygon
+          class="cls-9"
+          points="337.08 183.16 273.98 183.16 264.86 177.93 293.44 147.16 337.08 183.16"
+        />
+        <polygon
+          class="cls-9"
+          points="293.44 147.16 264.86 177.93 255.01 172.27 267.5 125.77 293.44 147.16"
+        />
+        <polygon
+          class="cls-9"
+          points="273.98 183.16 260 183.16 264.86 177.93 273.98 183.16"
+        />
+        <polygon
+          class="cls-10"
+          points="267.5 125.77 255.01 172.27 226.62 155.98 267.5 125.77"
+        />
+        <polygon
+          class="cls-9"
+          points="255.01 172.27 264.86 177.93 260 183.16 252.08 183.16 255.01 172.27"
+        />
+        <polygon
+          class="cls-10"
+          points="255.01 172.27 252.08 183.16 189.85 183.16 226.62 155.98 255.01 172.27"
+        />
+        <polygon
+          class="cls-11"
+          points="226.62 155.98 189.85 183.16 122.95 183.16 143.12 108.06 226.62 155.98"
+        />
+        <polygon
+          class="cls-12"
+          points="143.12 108.06 122.95 183.16 0 183.16 143.12 108.06"
+        />
       </svg>
     </section>
-    <section id="forecast-foundation" class="bg-white">
-      <h3>Forecasting Matters</h3>
-      <h2>Create a culture of sane ambition.</h2>
-      <div>
-        <div>
-          <p>Focused Realism</p>
-          <h4>Set the right goals.</h4>
-          <p>
-            When will you reach the next milestone for your business? Is it
-            realistic and achievable? What resources will it take to get there?
-            Can you be sure you have enough runway? SimSaaS answers these
-            questions based on today's traction.
-          </p>
+    <section id="forecast-foundation" class="bg-white py-16">
+      <div class="w-5/6 lg:w-11/12 mx-auto max-w-6xl">
+        <h3
+          class="text-xs text-grey-600 tracking-widest uppercase text-center mb-2"
+        >
+          Forecasting Matters
+        </h3>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl leading-snug text-center mb-20">
+          Create a culture of sane ambition.
+        </h2>
+        <div class="flex flex-col-reverse lg:flex-row items-center mb-20">
+          <div class="text-center lg:text-right lg:w-5/12 flex-shrink-0 pt-16 lg:pr-20 max-w-xl mx-auto">
+            <p class="text-xs text-grey-600 tracking-widest uppercase mb-2">
+              Focused Realism
+            </p>
+            <h4 class="text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">Set the right goals.</h4>
+            <p class="leading-relaxed text-grey-600">
+              When will you reach the next milestone for your business? Is it
+              realistic and achievable? What resources will it take to get
+              there? Can you be sure you have enough runway? SimSaaS answers
+              these questions based on today's traction.
+            </p>
+          </div>
+          <img
+            src="https://simsaas.s3.amazonaws.com/static/images/marketing/SimSaaS_Hummingbird_Revenue_Inset.png"
+            alt=""
+            class="rounded border border-grey-400 max-w-2xl mx-auto"
+          />
         </div>
-        <img
-          src="https://simsaas.s3.amazonaws.com/static/images/marketing/SimSaaS_Hummingbird_Revenue_Inset.png"
-          alt=""
-        />
+        <div class="flex flex-col-reverse lg:flex-row-reverse items-center mb-20">
+          <div class="text-center lg:text-right lg:w-5/12 flex-shrink-0 pt-16 lg:pl-20 max-w-xl mx-auto">
+            <p class="text-xs text-grey-600 tracking-widest uppercase mb-2">
+              Radical Cando
+            </p>
+            <h4 class="text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+              Spur conversations that inspire action.
+            </h4>
+            <p class="leading-relaxed text-grey-600 mb-4">
+              <strong
+                >By generating a range of outcomes, SimSaaS draws insights and
+                questions out of your audience</strong
+              >, whether team members, mentors, or investors. The curious will
+              wonder how you can work together to achieve your goals, instead of
+              why you chose a particular number or trajectory.
+            </p>
+            <p class="leading-relaxed text-grey-600">
+              Shift the conversation from fragile claims focused on a single
+              number: "Breakeven in 7 months!" to prioritization discussions:
+              "We'll break even in 7-16 months depending on how we evolve our
+              product."
+            </p>
+          </div>
+          <img
+            src="https://simsaas.s3.amazonaws.com/static/images/marketing/SimSaaS_Hummingbird_NetIncome_Inset.png"
+            alt=""
+            class="rounded border border-grey-400 max-w-2xl mx-auto"
+          />
+        </div>
+        <div class="flex flex-col-reverse lg:flex-row items-center mb-20">
+          <div class="text-center lg:text-right lg:w-5/12 flex-shrink-0 pt-16 lg:pr-20 max-w-xl mx-auto">
+            <p class="text-xs text-grey-600 tracking-widest uppercase mb-2">
+              Compounding Wins
+            </p>
+            <h4 class="text-2xl sm:text-3xl lg:text-4xl leading-snug mb-4">
+              Track the evolution of your growth engine.
+            </h4>
+            <p class="leading-relaxed text-grey-600">
+              When will you reach the next milestone for your business? Is it
+              realistic and achievable? What resources will it take to get
+              there? Can you be sure you have enough runway? SimSaaS answers
+              these questions based on today's traction.
+            </p>
+          </div>
+          <img
+            src="https://simsaas.s3.amazonaws.com/static/images/marketing/SimSaaS_Dashboard.png"
+            alt=""
+            class="rounded border border-grey-400 max-w-2xl mx-auto"
+          />
+        </div>
       </div>
     </section>
+    <section
+      id="forecast-foundation"
+      class="bg-white py-16 border-t border-b border-grey-200"
+    >
+      <div class="w-5/6 mx-auto max-w-5xl">
+        <h3
+          class="text-xs text-grey-600 tracking-widest uppercase text-center mb-2"
+        >
+          Incomplete & Every-Now-And-Then Isn't Good Enough
+        </h3>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl leading-snug text-center mb-16">
+          Traditional forecasting is a broken compass.
+        </h2>
+        <div class="bg-grey-100 border border-grey-100 rounded p-6 mb-6">
+          <h4 class="uppercase text-primary font-bold mb-2">
+            Expanding Requirements
+          </h4>
+          <p class="leading-relaxed">
+            SaaS businesses run on a growing combination of tools: CRM,
+            marketing automation platform, bookkeeping software, and metrics
+            dashboards.
+            <strong
+              >Each tool contains data series needed for projections.</strong
+            >
+            Snapshots from each of these tools have to be consistently captured.
+            <span class="bg-highlight"
+              >Because of this, most startups create incomplete forecasts–and
+              only when they have to.</span
+            >
+          </p>
+        </div>
+        <div class="border border-dotted border-primary-light rounded p-6 mb-6">
+          <h4 class="uppercase text-primary font-bold mb-2">Unclear Design</h4>
+          <p class="leading-relaxed">
+            Have you ever presented a forecast to an audience that wasn't sure
+            what to ask?
+            <strong
+              >When insufficient time is invested in design, functional areas of
+              the business disengage.</strong
+            >
+            <span class="bg-highlight"
+              >This hinders team alignment on goals and confidence that
+              execution will get you where you want to go.</span
+            >
+            Your audience may or may not believe the output–do you?
+          </p>
+        </div>
+        <div class="border border-dotted border-primary-light rounded p-6 mb-6">
+          <h4 class="uppercase text-primary font-bold mb-2">
+            Spreadsheet Wrangling
+          </h4>
+          <p class="leading-relaxed">
+            <strong
+              >SaaS founders and finance teams turn to a complex web of Excel or
+              Google Sheets to construct their forecast.</strong
+            >
+            Trends from sales, marketing, product, customer success, and
+            accounting are incorporated through formulas, lookups, and linear
+            extrapolations. Ballpark estimates are inserted where there's
+            uncertainty.
+            <span class="bg-highlight"
+              >Time is invested adjusting output rather than challenging
+              assumptions.</span
+            >
+          </p>
+        </div>
+        <div class="border border-dotted border-primary-light rounded p-6 mb-6">
+          <h4 class="uppercase text-primary font-bold mb-2">No Rearview</h4>
+          <p class="leading-relaxed">
+            Everyone checks for variance on their budget, but most companies
+            can't or won't compare their current performance to their past
+            projections. Changing formats may make this impossible, but more
+            likely, there's no time or incentive.
+            <strong
+              >The business loses the opportunity to measure its
+              predictability.</strong
+            >
+            <span class="bg-highlight"
+              >This works against your need to show the decreasing risk of your
+              business.</span
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="bg-white py-16 text-center">
+      <div class="w-5/6 mx-auto max-w-5xl">
+        <p class="mb-3">Would you like to learn more?</p>
+        <button
+          class="px-8 py-4 uppercase border border-primary bg-primary shadow hover:shadow-md text-white rounded tracking-widest text-xs sm:text-sm text-center w-full md:w-auto mb-4 md:mr-4"
+        >
+          Chat With Us
+        </button>
+      </div>
+    </section>
+    <section class="bg-grey-100 py-16 text-center">
+      <div class="w-5/6 mx-auto max-w-5xl">
+        <h3
+          class="text-xs text-grey-600 tracking-widest uppercase text-center mb-2"
+        >
+          Early Access
+        </h3>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl text-center mb-8">
+          Sign up and get your exclusive invite
+        </h2>
+        <form class="max-w-lg mx-auto">
+          <div
+            data-text-field
+            class="relative border border-grey-400 rounded bg-white mb-4"
+          >
+            <input class="p-4 w-full" name="name" type="text" />
+            <label class="absolute text-grey-600">First Name</label>
+          </div>
+          <div
+            data-text-field
+            class="relative border border-grey-400 rounded bg-white mb-4"
+          >
+            <input class="p-4 w-full" name="email" type="text" />
+            <label class="absolute text-grey-600">Email Address</label>
+          </div>
+          <input
+            class="px-8 py-4 uppercase border border-primary bg-primary shadow hover:shadow-md cursor-pointer text-white rounded tracking-widest text-xs sm:text-sm text-center w-full"
+            type="submit"
+            value="Subscribe"
+          />
+        </form>
+      </div>
+    </section>
+    <footer class="bg-white py-16">
+      <div class="w-5/6 mx-auto max-w-6xl flex mb-12">
+        <div class="w-1/2 flex-no-shrink">
+          <img
+            class="h-6 mb-3"
+            src="https://simsaas.s3.amazonaws.com/static/images/marketing/simsaas-logo-130%402x.png"
+            alt="SimSaaS"
+          />
+          <p><em>Continuously forecasting many futures.</em></p>
+        </div>
+        <div class="flex-1">
+          <h5 class="uppercase font-bold text-lg mb-3">Read...</h5>
+          <ul>
+            <li>
+              <a class="block pb-3 text-grey-600 underline">Product Updates</a>
+            </li>
+            <li>
+              <a class="block pb-3 text-grey-600 underline">Founder Blog</a>
+            </li>
+            <li>
+              <a class="block pb-3 text-grey-600 underline">Privacy Policy</a>
+            </li>
+            <li>
+              <a class="block pb-3 text-grey-600 underline">Terms of Service</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-1">
+            <h5 class="uppercase font-bold text-lg mb-3">Contact Us</h5>
+            <p class="block pb-3 text-grey-600">info@simsaas.co</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-5/6 mx-auto max-w-6xl text-center">
+        <p class="text-grey-300">&copy; 2019 Strategy Pi, LLC. All rights reserved.</p>
+      </div>
+    </footer>
     <script src="./index.js"></script>
   </body>
 </html>
